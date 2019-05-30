@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 47);
+            this.label1.Location = new System.Drawing.Point(37, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             // ProductoId_numericUpDown
             // 
-            this.ProductoId_numericUpDown.Location = new System.Drawing.Point(164, 47);
+            this.ProductoId_numericUpDown.Location = new System.Drawing.Point(159, 45);
             this.ProductoId_numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -75,7 +75,7 @@
             // 
             // Existencia_numericUpDown
             // 
-            this.Existencia_numericUpDown.Location = new System.Drawing.Point(164, 171);
+            this.Existencia_numericUpDown.Location = new System.Drawing.Point(159, 169);
             this.Existencia_numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -89,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 175);
+            this.label2.Location = new System.Drawing.Point(37, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 2;
@@ -97,7 +97,7 @@
             // 
             // Costo_numericUpDown
             // 
-            this.Costo_numericUpDown.Location = new System.Drawing.Point(164, 235);
+            this.Costo_numericUpDown.Location = new System.Drawing.Point(159, 233);
             this.Costo_numericUpDown.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -111,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 235);
+            this.label3.Location = new System.Drawing.Point(40, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 4;
@@ -121,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 303);
+            this.label4.Location = new System.Drawing.Point(37, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 16);
             this.label4.TabIndex = 6;
@@ -129,7 +129,7 @@
             // 
             // Descripcion_textBox
             // 
-            this.Descripcion_textBox.Location = new System.Drawing.Point(164, 109);
+            this.Descripcion_textBox.Location = new System.Drawing.Point(159, 107);
             this.Descripcion_textBox.MaxLength = 100;
             this.Descripcion_textBox.Name = "Descripcion_textBox";
             this.Descripcion_textBox.Size = new System.Drawing.Size(322, 20);
@@ -139,7 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(42, 109);
+            this.label5.Location = new System.Drawing.Point(37, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 9;
@@ -147,7 +147,7 @@
             // 
             // ValorInventario_textBox
             // 
-            this.ValorInventario_textBox.Location = new System.Drawing.Point(164, 299);
+            this.ValorInventario_textBox.Location = new System.Drawing.Point(159, 297);
             this.ValorInventario_textBox.Name = "ValorInventario_textBox";
             this.ValorInventario_textBox.Size = new System.Drawing.Size(191, 20);
             this.ValorInventario_textBox.TabIndex = 10;
@@ -157,7 +157,7 @@
             this.Buscar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.icono;
             this.Buscar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscar_button.Location = new System.Drawing.Point(389, 37);
+            this.Buscar_button.Location = new System.Drawing.Point(384, 35);
             this.Buscar_button.Name = "Buscar_button";
             this.Buscar_button.Size = new System.Drawing.Size(97, 36);
             this.Buscar_button.TabIndex = 14;
@@ -171,7 +171,7 @@
             this.Eliminar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.delete_icon;
             this.Eliminar_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminar_button.Location = new System.Drawing.Point(354, 357);
+            this.Eliminar_button.Location = new System.Drawing.Point(349, 355);
             this.Eliminar_button.Name = "Eliminar_button";
             this.Eliminar_button.Size = new System.Drawing.Size(95, 59);
             this.Eliminar_button.TabIndex = 13;
@@ -185,7 +185,7 @@
             this.Guardar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.Save_black_512_icon;
             this.Guardar_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardar_button.Location = new System.Drawing.Point(217, 357);
+            this.Guardar_button.Location = new System.Drawing.Point(212, 355);
             this.Guardar_button.Name = "Guardar_button";
             this.Guardar_button.Size = new System.Drawing.Size(96, 59);
             this.Guardar_button.TabIndex = 12;
@@ -199,7 +199,7 @@
             this.Nuevo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuevo_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.application_add_512_icon;
             this.Nuevo_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevo_button.Location = new System.Drawing.Point(79, 357);
+            this.Nuevo_button.Location = new System.Drawing.Point(74, 355);
             this.Nuevo_button.Name = "Nuevo_button";
             this.Nuevo_button.Size = new System.Drawing.Size(96, 59);
             this.Nuevo_button.TabIndex = 11;
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 452);
+            this.ClientSize = new System.Drawing.Size(525, 435);
             this.Controls.Add(this.Buscar_button);
             this.Controls.Add(this.Eliminar_button);
             this.Controls.Add(this.Guardar_button);

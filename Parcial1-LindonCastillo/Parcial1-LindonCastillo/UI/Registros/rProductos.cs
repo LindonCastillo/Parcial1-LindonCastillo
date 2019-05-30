@@ -36,7 +36,8 @@ namespace Parcial1_LindonCastillo.UI.Registros
 
         private void Guardar_button_Click(object sender, EventArgs e)
         {
-
+            errorProvider.SetError(Descripcion_textBox, "No deje el campo Descripción vacío");
+            Descripcion_textBox.Focus();
         }
 
         private void Eliminar_button_Click(object sender, EventArgs e)
@@ -75,6 +76,36 @@ namespace Parcial1_LindonCastillo.UI.Registros
         {
             Productos productos = ProductosBLL.Buscar((int) ProductoId_numericUpDown.Value);
             return (productos != null);
+        }
+
+        private bool Validar()
+        {
+            bool paso = true;
+            errorProvider.Clear();
+
+            if (string.IsNullOrEmpty(Descripcion_textBox.Text))
+            {
+                
+                errorProvider.SetError(Descripcion_textBox, "No deje el campo Descripción vacío");
+                Descripcion_textBox.Focus();
+                paso = false;
+            }
+
+            if(Existencia_numericUpDown.Value == 0)
+            {
+                errorProvider.SetError(Existencia_numericUpDown, "El valor de este campo no puede ser 0");
+                Existencia_numericUpDown.Focus();
+                paso = false;
+            }
+            
+            if(Costo_numericUpDown.Value == 0)
+            {
+                errorProvider.SetError(Costo_numericUpDown, "El valor de este campo no puede ser 0");
+                Costo_numericUpDown.Focus();
+                paso = false;
+            }
+
+            return paso;
         }
     }
 }
