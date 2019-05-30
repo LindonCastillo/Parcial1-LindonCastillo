@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial1_LindonCastillo.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Parcial1_LindonCastillo.DAL
 {
     public class Contexto : DbContext
     {
-        public LIS
+        public DbSet <Productos> productos { get; set; }
     }
 
     
