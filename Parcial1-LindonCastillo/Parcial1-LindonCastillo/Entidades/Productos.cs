@@ -13,8 +13,8 @@ namespace Parcial1_LindonCastillo.Entidades
         public int ProductoId { get; set; }
         public string Descripcion { get; set; }
         public int Existencia { get; set; }
-        public double Costo { get; set; }
-        public double ValorInventario { get; set; }
+        public decimal Costo { get; set; }
+        public decimal ValorInventario { get; set; }
 
         public Productos()
         {
