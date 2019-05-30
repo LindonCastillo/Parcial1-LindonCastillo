@@ -16,5 +16,20 @@ namespace Parcial1_LindonCastillo.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void Nuevo_button_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Guardar_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eliminar_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

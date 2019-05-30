@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProductos));
             this.label1 = new System.Windows.Forms.Label();
             this.ProductoId_numericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -43,9 +44,11 @@
             this.Eliminar_button = new System.Windows.Forms.Button();
             this.Guardar_button = new System.Windows.Forms.Button();
             this.Nuevo_button = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductoId_numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Existencia_numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Costo_numericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,6 +64,11 @@
             // ProductoId_numericUpDown
             // 
             this.ProductoId_numericUpDown.Location = new System.Drawing.Point(164, 47);
+            this.ProductoId_numericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.ProductoId_numericUpDown.Name = "ProductoId_numericUpDown";
             this.ProductoId_numericUpDown.Size = new System.Drawing.Size(191, 20);
             this.ProductoId_numericUpDown.TabIndex = 1;
@@ -68,6 +76,11 @@
             // Existencia_numericUpDown
             // 
             this.Existencia_numericUpDown.Location = new System.Drawing.Point(164, 171);
+            this.Existencia_numericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.Existencia_numericUpDown.Name = "Existencia_numericUpDown";
             this.Existencia_numericUpDown.Size = new System.Drawing.Size(191, 20);
             this.Existencia_numericUpDown.TabIndex = 3;
@@ -85,6 +98,11 @@
             // Costo_numericUpDown
             // 
             this.Costo_numericUpDown.Location = new System.Drawing.Point(164, 235);
+            this.Costo_numericUpDown.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.Costo_numericUpDown.Name = "Costo_numericUpDown";
             this.Costo_numericUpDown.Size = new System.Drawing.Size(191, 20);
             this.Costo_numericUpDown.TabIndex = 5;
@@ -112,8 +130,9 @@
             // Descripcion_textBox
             // 
             this.Descripcion_textBox.Location = new System.Drawing.Point(164, 109);
+            this.Descripcion_textBox.MaxLength = 100;
             this.Descripcion_textBox.Name = "Descripcion_textBox";
-            this.Descripcion_textBox.Size = new System.Drawing.Size(270, 20);
+            this.Descripcion_textBox.Size = new System.Drawing.Size(322, 20);
             this.Descripcion_textBox.TabIndex = 8;
             // 
             // label5
@@ -138,7 +157,7 @@
             this.Buscar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.icono;
             this.Buscar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscar_button.Location = new System.Drawing.Point(361, 37);
+            this.Buscar_button.Location = new System.Drawing.Point(389, 37);
             this.Buscar_button.Name = "Buscar_button";
             this.Buscar_button.Size = new System.Drawing.Size(97, 36);
             this.Buscar_button.TabIndex = 14;
@@ -151,45 +170,53 @@
             this.Eliminar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.delete_icon;
             this.Eliminar_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminar_button.Location = new System.Drawing.Point(339, 359);
+            this.Eliminar_button.Location = new System.Drawing.Point(354, 357);
             this.Eliminar_button.Name = "Eliminar_button";
             this.Eliminar_button.Size = new System.Drawing.Size(95, 59);
             this.Eliminar_button.TabIndex = 13;
             this.Eliminar_button.Text = "Eliminar";
             this.Eliminar_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Eliminar_button.UseVisualStyleBackColor = true;
+            this.Eliminar_button.Click += new System.EventHandler(this.Eliminar_button_Click);
             // 
             // Guardar_button
             // 
             this.Guardar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.Save_black_512_icon;
             this.Guardar_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardar_button.Location = new System.Drawing.Point(197, 359);
+            this.Guardar_button.Location = new System.Drawing.Point(217, 357);
             this.Guardar_button.Name = "Guardar_button";
             this.Guardar_button.Size = new System.Drawing.Size(96, 59);
             this.Guardar_button.TabIndex = 12;
             this.Guardar_button.Text = "Guardar";
             this.Guardar_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Guardar_button.UseVisualStyleBackColor = true;
+            this.Guardar_button.Click += new System.EventHandler(this.Guardar_button_Click);
             // 
             // Nuevo_button
             // 
             this.Nuevo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuevo_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.application_add_512_icon;
             this.Nuevo_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevo_button.Location = new System.Drawing.Point(65, 359);
+            this.Nuevo_button.Location = new System.Drawing.Point(79, 357);
             this.Nuevo_button.Name = "Nuevo_button";
             this.Nuevo_button.Size = new System.Drawing.Size(96, 59);
             this.Nuevo_button.TabIndex = 11;
             this.Nuevo_button.Text = "Nuevo";
             this.Nuevo_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevo_button.UseVisualStyleBackColor = true;
+            this.Nuevo_button.Click += new System.EventHandler(this.Nuevo_button_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 445);
+            this.ClientSize = new System.Drawing.Size(510, 452);
             this.Controls.Add(this.Buscar_button);
             this.Controls.Add(this.Eliminar_button);
             this.Controls.Add(this.Guardar_button);
@@ -210,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProductoId_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Existencia_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Costo_numericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +259,6 @@
         private System.Windows.Forms.Button Guardar_button;
         private System.Windows.Forms.Button Eliminar_button;
         private System.Windows.Forms.Button Buscar_button;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

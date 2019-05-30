@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Productos.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +111,6 @@
   <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="DAL\Script\" />
-    <Folder Include="Entidades\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\application_add-512 icon.ico" />
