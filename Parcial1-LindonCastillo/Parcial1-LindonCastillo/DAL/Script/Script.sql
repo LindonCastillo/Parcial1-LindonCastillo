@@ -6,13 +6,14 @@ go
 
 create table Productos
 (
-	ProductoId int identity,
+	ProductoId int primary key identity,
 	Descripcion varchar(100),
 	Existencia int,
-	Costo decimal,
-	--ValorInventario decimal
+	Costo decimal
 )
 go
 
 DROP DATABASE Parcial1_LindonCastillo_Db
 GO
+
+select * from Productos
