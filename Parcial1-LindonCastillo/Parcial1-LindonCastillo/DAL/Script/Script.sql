@@ -1,7 +1,7 @@
-create database Parcial1_LindonCastillo_Db
+create database Parcial1Db
 go
 
-use Parcial1_LindonCastillo_Db
+use Parcial1Db
 go
 
 create table Productos
@@ -13,7 +13,7 @@ create table Productos
 )
 go
 
-DROP DATABASE Parcial1_LindonCastillo_Db
+DROP DATABASE Parcial1Db
 GO
 
 select * from Productos
