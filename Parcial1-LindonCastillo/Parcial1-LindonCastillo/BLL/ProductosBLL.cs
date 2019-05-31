@@ -11,14 +11,14 @@ namespace Parcial1_LindonCastillo.BLL
 {
     public class ProductosBLL
     {   
-        public static bool Guardar(Productos productos)
+        public static bool Guardar(Productos Producto)
         {
             bool paso = false;
             Contexto db = new Contexto();
 
             try
             {
-                if(db.productos.Add(productos)!= null)
+                if(db.Producto.Add(Producto)!= null)
                 {
                     paso = db.SaveChanges() > 0;
                 }
@@ -34,14 +34,14 @@ namespace Parcial1_LindonCastillo.BLL
             return paso;
         }
 
-        public static bool Modificar(Productos productos)
+        public static bool Modificar(Productos Producto)
         {
             bool paso = false;
             Contexto db = new Contexto();
 
             try
             {
-                db.Entry(productos).State = EntityState.Modified;
+                db.Entry(Producto).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
             }
             catch(Exception)
@@ -62,8 +62,10 @@ namespace Parcial1_LindonCastillo.BLL
 
             try
             {
-                var eliminar = db.productos.Find(id);
+                var eliminar = db.Producto.Find(id);
                 db.Entry(eliminar).State = EntityState.Deleted;
+
+                paso = (db.SaveChanges() > 0);
             }
             catch
             {
@@ -81,11 +83,11 @@ namespace Parcial1_LindonCastillo.BLL
         public static Productos Buscar(int id)
         {
             Contexto db = new Contexto();
-            Productos productos;
+            Productos Producto;
 
             try
             {
-                productos =  db.productos.Find(id);
+                Producto =  db.Producto.Find(id);
             }
             catch
             {
@@ -96,7 +98,7 @@ namespace Parcial1_LindonCastillo.BLL
                 db.Dispose();
             }
 
-            return productos;
+            return Producto;
         }
     }
 }

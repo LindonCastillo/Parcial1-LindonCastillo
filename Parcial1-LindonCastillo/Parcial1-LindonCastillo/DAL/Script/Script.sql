@@ -10,7 +10,7 @@ create table Productos
 	Descripcion varchar(100),
 	Existencia int,
 	Costo decimal,
-	ValorInventario decimal
+	--ValorInventario decimal
 )
 go
 

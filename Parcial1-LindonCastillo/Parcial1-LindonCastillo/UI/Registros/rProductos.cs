@@ -25,7 +25,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Descripcion_textBox.Text = string.Empty;
             Existencia_numericUpDown.Value = 0;
             Costo_numericUpDown.Value = 0;
-            ValorInventario_textBox.Text = "0";
+            //ValorInventario_textBox.Text = "0";
 
         }
 
@@ -36,7 +36,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
 
         private void Guardar_button_Click(object sender, EventArgs e)
         {
-            Productos productos;
+            Productos Producto;
             bool paso = false;
 
             if (!Validar())
@@ -44,11 +44,11 @@ namespace Parcial1_LindonCastillo.UI.Registros
                 return;
             }
 
-            productos = LlenarClase();
+            Producto = LlenarClase();
 
             if(ProductoId_numericUpDown.Value == 0)
             {
-                paso = ProductosBLL.Guardar(productos);
+                paso = ProductosBLL.Guardar(Producto);
             }
             else
             {
@@ -58,7 +58,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
                     return;
                 }
 
-                paso = ProductosBLL.Modificar(productos);
+                paso = ProductosBLL.Modificar(Producto);
             }
 
             if (paso)
@@ -92,16 +92,16 @@ namespace Parcial1_LindonCastillo.UI.Registros
 
         private void Buscar_button_Click(object sender, EventArgs e)
         {
-            Productos productos;
+            Productos Producto;
             int id = Convert.ToInt32(ProductoId_numericUpDown.Value);
 
             Limpiar();
 
-            productos = ProductosBLL.Buscar(id);
+            Producto = ProductosBLL.Buscar(id);
 
-            if(productos != null)
+            if(Producto != null)
             {
-                LlenarCampos(productos);
+                LlenarCampos(Producto);
                 MessageBox.Show("Producto Encontrado","Exito!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
@@ -114,7 +114,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             productos.Descripcion = Convert.ToString(Descripcion_textBox.Text);
             productos.Existencia = Convert.ToInt32(Existencia_numericUpDown.Value);
             productos.Costo = Convert.ToDecimal(Costo_numericUpDown.Value);
-            productos.ValorInventario = Convert.ToDecimal(ValorInventario_textBox.Text);
+            //productos.ValorInventario = Convert.ToDecimal(ValorInventario_textBox.Text);
 
             return productos;
         }
@@ -125,7 +125,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Descripcion_textBox.Text = productos.Descripcion;
             Existencia_numericUpDown.Value = productos.Existencia;
             Costo_numericUpDown.Value = Convert.ToDecimal(productos.Costo);
-            ValorInventario_textBox.Text = Convert.ToString(productos.ValorInventario);
+            //ValorInventario_textBox.Text = Convert.ToString(productos.ValorInventario);
         }
 
         private bool ExisteEnLaBaseDeDatos()
@@ -149,14 +149,14 @@ namespace Parcial1_LindonCastillo.UI.Registros
 
             if(Existencia_numericUpDown.Value == 0)
             {
-                errorProvider.SetError(Existencia_numericUpDown, "El valor de este campo no puede ser 0");
+                errorProvider.SetError(Existencia_numericUpDown, "El valor de este campo no puede ser igual a cero");
                 Existencia_numericUpDown.Focus();
                 paso = false;
             }
             
             if(Costo_numericUpDown.Value == 0)
             {
-                errorProvider.SetError(Costo_numericUpDown, "El valor de este campo no puede ser 0");
+                errorProvider.SetError(Costo_numericUpDown, "El valor de este campo no puede ser igual a cero");
                 Costo_numericUpDown.Focus();
                 paso = false;
             }
