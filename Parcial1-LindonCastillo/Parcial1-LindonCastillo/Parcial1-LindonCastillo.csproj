@@ -109,9 +109,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\Script\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\application_add-512 icon.ico" />
   </ItemGroup>
@@ -126,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sync Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Script\Script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
