@@ -36,18 +36,74 @@ namespace Parcial1_LindonCastillo.UI.Registros
 
         private void Guardar_button_Click(object sender, EventArgs e)
         {
-            errorProvider.SetError(Descripcion_textBox, "No deje el campo Descripción vacío");
-            Descripcion_textBox.Focus();
+            Productos productos;
+            bool paso = false;
+
+            if (!Validar())
+            {
+                return;
+            }
+
+            productos = LlenarClase();
+
+            if(ProductoId_numericUpDown.Value == 0)
+            {
+                paso = ProductosBLL.Guardar(productos);
+            }
+            else
+            {
+                if(!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se puede modificar un producto que no existe","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+
+                paso = ProductosBLL.Modificar(productos);
+            }
+
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Eliminar_button_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
+            int id;
+            int.TryParse(ProductoId_numericUpDown.Text, out id);
 
+            Limpiar();
+
+            if (ProductosBLL.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se puede eliminar este Usuario", "No Hubo Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Buscar_button_Click(object sender, EventArgs e)
         {
+            Productos productos;
+            int id = Convert.ToInt32(ProductoId_numericUpDown.Value);
 
+            Limpiar();
+
+            productos = ProductosBLL.Buscar(id);
+
+            if(productos != null)
+            {
+                LlenarCampos(productos);
+                MessageBox.Show("Producto Encontrado","Exito!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
 
         private Productos LlenarClase()
@@ -106,6 +162,25 @@ namespace Parcial1_LindonCastillo.UI.Registros
             }
 
             return paso;
+        }
+
+        private decimal CalcularInventario()
+        {
+            int existencia = Convert.ToInt32(Existencia_numericUpDown.Value);
+            decimal costo = Convert.ToDecimal(Costo_numericUpDown.Value);
+            decimal valor = existencia*costo;
+
+            return valor;
+        }
+
+        private void Existencia_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            ValorInventario_textBox.Text = Convert.ToString(CalcularInventario());
+        }
+
+        private void Costo_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            ValorInventario_textBox.Text = Convert.ToString(CalcularInventario());
         }
     }
 }

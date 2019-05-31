@@ -84,6 +84,7 @@
             this.Existencia_numericUpDown.Name = "Existencia_numericUpDown";
             this.Existencia_numericUpDown.Size = new System.Drawing.Size(191, 20);
             this.Existencia_numericUpDown.TabIndex = 3;
+            this.Existencia_numericUpDown.ValueChanged += new System.EventHandler(this.Existencia_numericUpDown_ValueChanged);
             // 
             // label2
             // 
@@ -106,6 +107,7 @@
             this.Costo_numericUpDown.Name = "Costo_numericUpDown";
             this.Costo_numericUpDown.Size = new System.Drawing.Size(191, 20);
             this.Costo_numericUpDown.TabIndex = 5;
+            this.Costo_numericUpDown.ValueChanged += new System.EventHandler(this.Costo_numericUpDown_ValueChanged);
             // 
             // label3
             // 
