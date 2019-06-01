@@ -45,6 +45,7 @@
             this.Guardar_button = new System.Windows.Forms.Button();
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductoId_numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Existencia_numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Costo_numericUpDown)).BeginInit();
@@ -149,9 +150,12 @@
             // 
             // ValorInventario_textBox
             // 
+            this.ValorInventario_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ValorInventario_textBox.Enabled = false;
+            this.ValorInventario_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ValorInventario_textBox.Location = new System.Drawing.Point(159, 297);
             this.ValorInventario_textBox.Name = "ValorInventario_textBox";
-            this.ValorInventario_textBox.Size = new System.Drawing.Size(191, 20);
+            this.ValorInventario_textBox.Size = new System.Drawing.Size(191, 22);
             this.ValorInventario_textBox.TabIndex = 10;
             // 
             // Buscar_button
@@ -215,6 +219,11 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,5 +272,6 @@
         private System.Windows.Forms.Button Eliminar_button;
         private System.Windows.Forms.Button Buscar_button;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -53,8 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ModificacionesBLL.cs" />
     <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Modificaciones.cs" />
     <Compile Include="Entidades\Productos.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>

@@ -45,7 +45,7 @@
             // Actualizar_button
             // 
             this.Actualizar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.Sync_Icon;
-            this.Actualizar_button.Location = new System.Drawing.Point(376, 115);
+            this.Actualizar_button.Location = new System.Drawing.Point(380, 120);
             this.Actualizar_button.Name = "Actualizar_button";
             this.Actualizar_button.Size = new System.Drawing.Size(43, 38);
             this.Actualizar_button.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 187);
+            this.ClientSize = new System.Drawing.Size(469, 187);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ValorInventarioTotal_textBox);
             this.Controls.Add(this.Actualizar_button);

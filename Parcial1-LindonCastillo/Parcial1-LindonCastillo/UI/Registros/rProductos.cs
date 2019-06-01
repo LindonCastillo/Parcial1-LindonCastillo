@@ -59,6 +59,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
                 }
 
                 paso = ProductosBLL.Modificar(Producto);
+
             }
 
             if (paso)
