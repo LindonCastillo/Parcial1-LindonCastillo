@@ -13,7 +13,17 @@ create table Productos
 )
 go
 
+create table Modificaciones
+(
+	ModificId int primary key identity,
+	ProductoId int,
+	Descripcion varchar(100),
+	FechaModific date
+)
+go
+
 DROP DATABASE Parcial1Db
 GO
 
 select * from Productos
+select * from Modificaciones

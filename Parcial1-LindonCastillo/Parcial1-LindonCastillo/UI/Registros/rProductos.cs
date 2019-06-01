@@ -57,8 +57,13 @@ namespace Parcial1_LindonCastillo.UI.Registros
                     MessageBox.Show("No se puede modificar un producto que no existe","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
-
+            
                 paso = ProductosBLL.Modificar(Producto);
+
+                bool paso2 = false;
+                Modificaciones modificaciones = new Modificaciones();
+                modificaciones = LlenarClase2();
+                paso2 = ModificacionesBLL.Guardar(modificaciones);
 
             }
 
@@ -118,6 +123,16 @@ namespace Parcial1_LindonCastillo.UI.Registros
             //productos.ValorInventario = Convert.ToDecimal(ValorInventario_textBox.Text);
 
             return productos;
+        }
+
+        private Modificaciones LlenarClase2()
+        {
+            Modificaciones modificaciones = new Modificaciones();
+            modificaciones.ProductoId = Convert.ToInt32(ProductoId_numericUpDown.Value);
+            modificaciones.Descripcion = Convert.ToString(Descripcion_textBox.Text);
+            modificaciones.FechaModific = DateTime.Now;
+
+            return modificaciones;
         }
 
         private void LlenarCampos(Productos productos)
