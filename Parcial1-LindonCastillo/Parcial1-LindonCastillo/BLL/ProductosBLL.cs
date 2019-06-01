@@ -67,7 +67,7 @@ namespace Parcial1_LindonCastillo.BLL
 
                 paso = (db.SaveChanges() > 0);
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }
@@ -89,7 +89,7 @@ namespace Parcial1_LindonCastillo.BLL
             {
                 Producto =  db.Producto.Find(id);
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }

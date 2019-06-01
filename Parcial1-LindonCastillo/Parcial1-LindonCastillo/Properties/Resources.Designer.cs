@@ -93,6 +93,16 @@ namespace Parcial1_LindonCastillo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap preview_search_find_locate_1551 {
+            get {
+                object obj = ResourceManager.GetObject("preview_search_find_locate_1551", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_black_512_icon {
             get {
                 object obj = ResourceManager.GetObject("Save_black-512 icon", resourceCulture);
