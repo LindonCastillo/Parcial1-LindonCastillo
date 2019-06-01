@@ -31,5 +31,11 @@ namespace Parcial1_LindonCastillo
             cValorInventarioTotal cvalorinventario = new cValorInventarioTotal();
             cvalorinventario.Show();
         }
+
+        private void ModificacionDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cModificaciones cmodificaciones = new cModificaciones();
+            cmodificaciones.Show();
+        }
     }
 }

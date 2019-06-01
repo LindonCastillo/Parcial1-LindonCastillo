@@ -33,6 +33,7 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.valorDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.valorDeInventarioToolStripMenuItem});
+            this.valorDeInventarioToolStripMenuItem,
+            this.modificacionDeProductosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "&Consultas";
@@ -73,9 +75,16 @@
             // valorDeInventarioToolStripMenuItem
             // 
             this.valorDeInventarioToolStripMenuItem.Name = "valorDeInventarioToolStripMenuItem";
-            this.valorDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.valorDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.valorDeInventarioToolStripMenuItem.Text = "&Valor de Inventario";
             this.valorDeInventarioToolStripMenuItem.Click += new System.EventHandler(this.ValorDeInventarioToolStripMenuItem_Click);
+            // 
+            // modificacionDeProductosToolStripMenuItem
+            // 
+            this.modificacionDeProductosToolStripMenuItem.Name = "modificacionDeProductosToolStripMenuItem";
+            this.modificacionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.modificacionDeProductosToolStripMenuItem.Text = "Modificación de Productos";
+            this.modificacionDeProductosToolStripMenuItem.Click += new System.EventHandler(this.ModificacionDeProductosToolStripMenuItem_Click);
             // 
             // MainMenu
             // 
@@ -100,6 +109,7 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valorDeInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionDeProductosToolStripMenuItem;
     }
 }
 
