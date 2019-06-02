@@ -28,7 +28,8 @@ namespace Parcial1_LindonCastillo.UI.Consultas
 
             foreach(var i in listado)
             {
-                valorTotal += i.ValorInventario;
+                var temp = i.ValorInventario;
+                valorTotal += temp;
                 
             }
 
