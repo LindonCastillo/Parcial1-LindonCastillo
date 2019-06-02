@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -99,6 +100,27 @@ namespace Parcial1_LindonCastillo.BLL
             }
 
             return Producto;
+        }
+
+        public static List<Productos> GetList(Expression<Func<Productos, bool>> Producto)
+        {
+            List<Productos> Lista = new List<Productos>();
+            Contexto db = new Contexto();
+
+            try
+            {
+                Lista = db.Producto.Where(Producto).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+
+            return Lista;
         }
     }
 }

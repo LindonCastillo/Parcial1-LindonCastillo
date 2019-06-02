@@ -45,11 +45,12 @@
             // Actualizar_button
             // 
             this.Actualizar_button.Image = global::Parcial1_LindonCastillo.Properties.Resources.Sync_Icon;
-            this.Actualizar_button.Location = new System.Drawing.Point(380, 120);
+            this.Actualizar_button.Location = new System.Drawing.Point(384, 115);
             this.Actualizar_button.Name = "Actualizar_button";
             this.Actualizar_button.Size = new System.Drawing.Size(43, 38);
             this.Actualizar_button.TabIndex = 0;
             this.Actualizar_button.UseVisualStyleBackColor = true;
+            this.Actualizar_button.Click += new System.EventHandler(this.Actualizar_button_Click);
             // 
             // label1
             // 
