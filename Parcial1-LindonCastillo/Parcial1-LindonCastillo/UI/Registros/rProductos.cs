@@ -163,16 +163,16 @@ namespace Parcial1_LindonCastillo.UI.Registros
                 paso = false;
             }
 
-            if(Existencia_numericUpDown.Value == 0)
+            if(Existencia_numericUpDown.Value < 0)
             {
-                errorProvider.SetError(Existencia_numericUpDown, "El valor de este campo no puede ser igual a cero");
+                errorProvider.SetError(Existencia_numericUpDown, "El valor de este campo no puede menor que 0");
                 Existencia_numericUpDown.Focus();
                 paso = false;
             }
             
             if(Costo_numericUpDown.Value == 0)
             {
-                errorProvider.SetError(Costo_numericUpDown, "El valor de este campo no puede ser igual a cero");
+                errorProvider.SetError(Costo_numericUpDown, "El valor de este campo no puede ser igual a 0");
                 Costo_numericUpDown.Focus();
                 paso = false;
             }
