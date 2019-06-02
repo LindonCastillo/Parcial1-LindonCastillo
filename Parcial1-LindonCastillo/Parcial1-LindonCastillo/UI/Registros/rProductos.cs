@@ -120,7 +120,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             productos.Descripcion = Convert.ToString(Descripcion_textBox.Text);
             productos.Existencia = Convert.ToInt32(Existencia_numericUpDown.Value);
             productos.Costo = Convert.ToDecimal(Costo_numericUpDown.Value);
-            //productos.ValorInventario = Convert.ToDecimal(ValorInventario_textBox.Text);
+            productos.ValorInventario = Existencia_numericUpDown.Value * Costo_numericUpDown.Value;
 
             return productos;
         }
@@ -141,7 +141,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Descripcion_textBox.Text = productos.Descripcion;
             Existencia_numericUpDown.Value = productos.Existencia;
             Costo_numericUpDown.Value = Convert.ToDecimal(productos.Costo);
-            //ValorInventario_textBox.Text = Convert.ToString(productos.ValorInventario);
+            ValorInventario_textBox.Text = Convert.ToString(productos.ValorInventario);
         }
 
         private bool ExisteEnLaBaseDeDatos()
