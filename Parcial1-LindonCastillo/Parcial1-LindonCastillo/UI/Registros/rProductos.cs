@@ -69,7 +69,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             if (paso)
             {
                 Limpiar();
-                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se modifico con exito!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -84,15 +84,22 @@ namespace Parcial1_LindonCastillo.UI.Registros
             int.TryParse(ProductoId_numericUpDown.Text, out id);
 
             Limpiar();
+            try
+            {
+                if (ProductosBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar este Usuario", "No Hubo Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Hubo un error eliminando");
+            }
 
-            if (ProductosBLL.Eliminar(id))
-            {
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("No se puede eliminar este Usuario", "No Hubo Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         private void Buscar_button_Click(object sender, EventArgs e)
