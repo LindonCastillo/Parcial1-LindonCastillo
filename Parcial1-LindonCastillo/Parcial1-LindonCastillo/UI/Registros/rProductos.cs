@@ -69,7 +69,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             if (paso)
             {
                 Limpiar();
-                MessageBox.Show("Se modifico con exito!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -165,7 +165,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             bool paso = true;
             errorProvider.Clear();
 
-            if (string.IsNullOrEmpty(Descripcion_textBox.Text))
+            if (string.IsNullOrWhiteSpace(Descripcion_textBox.Text))
             {
                 
                 errorProvider.SetError(Descripcion_textBox, "No deje el campo Descripción vacío");
