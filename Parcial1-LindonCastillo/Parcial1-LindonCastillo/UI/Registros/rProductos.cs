@@ -58,7 +58,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
                 }
             
                 paso = ProductosBLL.Modificar(Producto);
-
+                MessageBox.Show("Se modifico con Exito!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 bool paso2 = false;
                 Modificaciones modificaciones = new Modificaciones();
                 modificaciones = LlenarClase2();
