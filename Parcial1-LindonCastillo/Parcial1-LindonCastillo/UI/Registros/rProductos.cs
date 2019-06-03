@@ -127,7 +127,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Productos productos = new Productos();
 
             productos.ProductoId = Convert.ToInt32(ProductoId_numericUpDown.Value);
-            productos.Descripcion = Convert.ToString(Descripcion_textBox.Text);
+            productos.Descripcion = Convert.ToString(Descripcion_textBox.Text.Trim());
             productos.Existencia = Convert.ToInt32(Existencia_numericUpDown.Value);
             productos.Costo = Convert.ToDecimal(Costo_numericUpDown.Value);
             productos.ValorInventario = Existencia_numericUpDown.Value * Costo_numericUpDown.Value;
