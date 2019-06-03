@@ -25,7 +25,6 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Descripcion_textBox.Text = string.Empty;
             Existencia_numericUpDown.Value = 0;
             Costo_numericUpDown.Value = 0;
-            //ValorInventario_textBox.Text = "0";
 
         }
 
@@ -108,7 +107,11 @@ namespace Parcial1_LindonCastillo.UI.Registros
             if(Producto != null)
             {
                 LlenarCampos(Producto);
-                MessageBox.Show("Producto Encontrado","Exito!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Producto Encontrado!","Exito!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Producto No Encontrado!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
