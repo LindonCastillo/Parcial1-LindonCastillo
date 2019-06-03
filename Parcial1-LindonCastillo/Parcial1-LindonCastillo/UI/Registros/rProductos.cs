@@ -77,7 +77,7 @@ namespace Parcial1_LindonCastillo.UI.Registros
             }
         }
 
-        private void Eliminar_button_Click(object sender, EventArgs e)
+        private void Eliminar_button_Click(object sender, EventArgs e) 
         {
             errorProvider.Clear();
             int id;
