@@ -17,6 +17,20 @@ namespace Parcial1_LindonCastillo.UI.Registros
         public rProductos()
         {
             InitializeComponent();
+            LlenarComboBox();
+        }
+        private void LlenarComboBox()
+        {
+            //Ubicaciones ubicaciones;
+
+            var listado = new List<Ubicaciones>();
+
+            listado = UbicacionesBLL.GetList(p => true);
+
+            Ubicacion_comboBox.DataSource = listado;
+            Ubicacion_comboBox.ValueMember = "UbicacionId";
+            Ubicacion_comboBox.DisplayMember = "Descripcion";
+
         }
 
         private void Limpiar()
@@ -207,6 +221,12 @@ namespace Parcial1_LindonCastillo.UI.Registros
         private void Costo_numericUpDown_ValueChanged(object sender, EventArgs e)
         {
             ValorInventario_textBox.Text = Convert.ToString(CalcularInventario());
+        }
+
+        private void RegistroUbicacion_button_Click(object sender, EventArgs e)
+        {
+            rUbicaciones ubicaciones = new rUbicaciones();
+            ubicaciones.Show();
         }
     }
 }

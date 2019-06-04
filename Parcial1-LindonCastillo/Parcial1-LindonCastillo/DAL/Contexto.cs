@@ -12,6 +12,7 @@ namespace Parcial1_LindonCastillo.DAL
     {
         public DbSet <Productos> Producto { get; set; }
         public DbSet <Modificaciones> Modificacion { get; set; }
+        public DbSet <Ubicaciones> Ubicacion { get; set; }
 
         public Contexto() : base("ConStr")
         { }
