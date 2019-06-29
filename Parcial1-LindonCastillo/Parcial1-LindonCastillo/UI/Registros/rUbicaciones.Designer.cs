@@ -41,26 +41,26 @@
             // 
             // Id_numericUpDown
             // 
-            this.Id_numericUpDown.Location = new System.Drawing.Point(40, 46);
+            this.Id_numericUpDown.Location = new System.Drawing.Point(23, 46);
             this.Id_numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.Id_numericUpDown.Name = "Id_numericUpDown";
-            this.Id_numericUpDown.Size = new System.Drawing.Size(114, 20);
+            this.Id_numericUpDown.Size = new System.Drawing.Size(131, 20);
             this.Id_numericUpDown.TabIndex = 0;
             // 
             // Descripcion_textBox
             // 
-            this.Descripcion_textBox.Location = new System.Drawing.Point(40, 101);
+            this.Descripcion_textBox.Location = new System.Drawing.Point(23, 101);
             this.Descripcion_textBox.Name = "Descripcion_textBox";
-            this.Descripcion_textBox.Size = new System.Drawing.Size(205, 20);
+            this.Descripcion_textBox.Size = new System.Drawing.Size(222, 20);
             this.Descripcion_textBox.TabIndex = 1;
             // 
             // Nuevo_button
             // 
-            this.Nuevo_button.Location = new System.Drawing.Point(12, 166);
+            this.Nuevo_button.Location = new System.Drawing.Point(12, 143);
             this.Nuevo_button.Name = "Nuevo_button";
             this.Nuevo_button.Size = new System.Drawing.Size(79, 28);
             this.Nuevo_button.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // Guardar_button
             // 
-            this.Guardar_button.Location = new System.Drawing.Point(97, 166);
+            this.Guardar_button.Location = new System.Drawing.Point(97, 143);
             this.Guardar_button.Name = "Guardar_button";
             this.Guardar_button.Size = new System.Drawing.Size(79, 28);
             this.Guardar_button.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // Eliminar_button
             // 
-            this.Eliminar_button.Location = new System.Drawing.Point(182, 166);
+            this.Eliminar_button.Location = new System.Drawing.Point(182, 143);
             this.Eliminar_button.Name = "Eliminar_button";
             this.Eliminar_button.Size = new System.Drawing.Size(79, 28);
             this.Eliminar_button.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 23);
+            this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 20);
             this.label1.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 78);
+            this.label2.Location = new System.Drawing.Point(29, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 6;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 210);
+            this.ClientSize = new System.Drawing.Size(279, 189);
             this.Controls.Add(this.Buscar_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

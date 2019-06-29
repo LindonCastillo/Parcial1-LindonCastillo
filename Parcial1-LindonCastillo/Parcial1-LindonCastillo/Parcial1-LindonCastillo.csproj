@@ -58,6 +58,7 @@
     <Compile Include="BLL\UbicacionesBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Modificaciones.cs" />
+    <Compile Include="Entidades\PrecioDetalle.cs" />
     <Compile Include="Entidades\Productos.cs" />
     <Compile Include="Entidades\Ubicaciones.cs" />
     <Compile Include="MainMenu.cs">

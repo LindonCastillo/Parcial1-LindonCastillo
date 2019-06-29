@@ -42,6 +42,13 @@ namespace Parcial1_LindonCastillo.BLL
 
             try
             {
+                var Anterior = Buscar(Producto.ProductoId);
+                foreach(var item in Anterior.Precio)
+                {
+                    if (!Producto.Precio.Exists(d => d.Id == item.Id))
+                        db.Entry(item).State = EntityState.Deleted;
+                }
+
                 db.Entry(Producto).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
             }
@@ -89,6 +96,7 @@ namespace Parcial1_LindonCastillo.BLL
             try
             {
                 Producto =  db.Producto.Find(id);
+                Producto.Precio.Count();
             }
             catch(Exception)
             {

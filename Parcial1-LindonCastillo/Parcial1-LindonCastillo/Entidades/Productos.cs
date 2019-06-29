@@ -17,6 +17,8 @@ namespace Parcial1_LindonCastillo.Entidades
         public decimal Costo { get; set; }
         public decimal ValorInventario { get; set; }
 
+        public virtual List<PrecioDetalle> Precio { get; set; }
+
         public Productos()
         {
             ProductoId = 0;
@@ -24,6 +26,8 @@ namespace Parcial1_LindonCastillo.Entidades
             Existencia = 0;
             Costo = 0;
             ValorInventario = 0;
+
+            Precio = new List<PrecioDetalle>();
         }
     }
 }

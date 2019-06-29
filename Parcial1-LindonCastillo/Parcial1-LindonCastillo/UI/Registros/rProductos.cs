@@ -14,10 +14,12 @@ namespace Parcial1_LindonCastillo.UI.Registros
 {
     public partial class rProductos : Form
     {
+        public List<PrecioDetalle> Detalle { get; set; }
         public rProductos()
         {
             InitializeComponent();
             LlenarComboBox();
+            this.Detalle = new List<PrecioDetalle>();
         }
         private void LlenarComboBox()
         {
@@ -40,6 +42,10 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Existencia_numericUpDown.Value = 0;
             Costo_numericUpDown.Value = 0;
 
+
+            this.Detalle = new List<PrecioDetalle>();
+            CargarGrid();
+
         }
 
         private void Nuevo_button_Click(object sender, EventArgs e)
@@ -55,6 +61,15 @@ namespace Parcial1_LindonCastillo.UI.Registros
             if (!Validar())
             {
                 return;
+            }
+
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al guardar");
             }
 
             Producto = LlenarClase();
@@ -122,18 +137,26 @@ namespace Parcial1_LindonCastillo.UI.Registros
             int id = Convert.ToInt32(ProductoId_numericUpDown.Value);
 
             Limpiar();
-
-            Producto = ProductosBLL.Buscar(id);
-
-            if(Producto != null)
+            try      
             {
-                LlenarCampos(Producto);
-                MessageBox.Show("Producto Encontrado!","Exito!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Producto = ProductosBLL.Buscar(id);
+                if(Producto != null)
+                {
+                    LlenarCampos(Producto);
+                    MessageBox.Show("Producto Encontrado!","Exito!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Producto No Encontrado!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show("Producto No Encontrado!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Producto No Encontrado o No existe!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        
+
+
         }
 
         private Productos LlenarClase()
@@ -145,6 +168,8 @@ namespace Parcial1_LindonCastillo.UI.Registros
             productos.Existencia = Convert.ToInt32(Existencia_numericUpDown.Value);
             productos.Costo = Convert.ToDecimal(Costo_numericUpDown.Value);
             productos.ValorInventario = Existencia_numericUpDown.Value * Costo_numericUpDown.Value;
+
+            productos.Precio = this.Detalle;
 
             return productos;
         }
@@ -166,6 +191,10 @@ namespace Parcial1_LindonCastillo.UI.Registros
             Existencia_numericUpDown.Value = productos.Existencia;
             Costo_numericUpDown.Value = Convert.ToDecimal(productos.Costo);
             ValorInventario_textBox.Text = Convert.ToString(productos.ValorInventario);
+
+            this.Detalle = productos.Precio;
+            CargarGrid();
+
         }
 
         private bool ExisteEnLaBaseDeDatos()
@@ -201,7 +230,36 @@ namespace Parcial1_LindonCastillo.UI.Registros
                 paso = false;
             }
 
+            if(this.Detalle.Count() == 0)
+            {
+                errorProvider.SetError(PrecioDetalle_dataGridView, "Debe agregar algun Precio");
+                Precio_numericUpDown.Focus();
+                paso = false;
+            }
+            /*
+
+            if(Costo_numericUpDown.Value > Precio_numericUpDown.Value)
+            {
+                errorProvider.SetError(PrecioDetalle_dataGridView, "El Precio del Producto no puede ser menor al costo");
+                Precio_numericUpDown.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(TipoPrecio_textBox.Text))
+            {
+
+                errorProvider.SetError(TipoPrecio_textBox, "No deje el campo vacío");
+                Descripcion_textBox.Focus();
+                paso = false;
+            }*/
+
             return paso;
+        }
+
+        private void CargarGrid()
+        {
+            PrecioDetalle_dataGridView.DataSource = null;
+            PrecioDetalle_dataGridView.DataSource = this.Detalle;
         }
 
         private decimal CalcularInventario()
@@ -227,6 +285,35 @@ namespace Parcial1_LindonCastillo.UI.Registros
         {
             rUbicaciones ubicaciones = new rUbicaciones();
             ubicaciones.Show();
+        }
+
+        private void Agregar_button_Click(object sender, EventArgs e)
+        {
+            if (PrecioDetalle_dataGridView.DataSource != null)
+                this.Detalle = (List<PrecioDetalle>)PrecioDetalle_dataGridView.DataSource;
+
+            this.Detalle.Add(
+                new PrecioDetalle(
+                    id: 0,
+                    idProducto: (int)ProductoId_numericUpDown.Value,
+                    tipoPrecio: TipoPrecio_textBox.Text,
+                    precio: Precio_numericUpDown.Value
+                    )
+                );
+
+            CargarGrid();
+            TipoPrecio_textBox.Focus();
+            TipoPrecio_textBox.Clear();
+            Precio_numericUpDown.Value = 0;
+        }
+
+        private void RemoverFila_button_Click(object sender, EventArgs e)
+        {
+            if(PrecioDetalle_dataGridView.Rows.Count > 0 && PrecioDetalle_dataGridView.CurrentRow != null)
+            {
+                Detalle.RemoveAt(PrecioDetalle_dataGridView.CurrentRow.Index);
+                CargarGrid();
+            }
         }
     }
 }
